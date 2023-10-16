@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <link rel="icon" href="./media/icons/favicon (2).ico">
+    <link rel="stylesheet" href="/css/stlyle.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/script.js"></script>
+    <style>
+
+        .page-status{
+            background-color: rgb(19, 36, 46);
+        }
+        
+        .status-page{
+            background-color: #2a3942;
+            border: none;
+        }
+
+        .contacts-list-status{
+            width: 92%;
+            margin: 30px auto auto auto;
+            height: 80.8%;
+            overflow: visible;
+        }
+
+        .contact-holder-status:hover{
+            background-color: #29373e;
+            cursor: pointer;
+        }
+
+        .contact-list-two{
+            width: 100%;
+            height: 81%;
+            overflow-y: scroll;
+        }
+        .my-status{
+            width: 85%;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #cacaca;
+        }
+
+        h3,.recent{
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .name, .my-status p{
+            margin: 0;
+        }
+
+        hr{
+            margin: 20px auto 8px auto;
+            height: 0px;
+            border: none;
+            border-top: 1px solid rgb(248, 248, 255,0.4);
+        }
+
+        .recent{
+            margin-bottom: 10px;
+        }
+        
+        .last-text{
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            text-align: center;
+            font-size: small;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(201, 201, 201);
+        }
+
+        strong{
+            color: rgb(65, 65, 186);
+        }
+
+        .low-rider{
+            height: 100%;
+            background-color: #2a3942;
+        }
+
+        .pager p{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            height: 0;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: right;
+        }
+        .pager p a {
+            text-decoration: none;
+            color: white;
+            margin-right: 20px;
+        }
+        .status-image{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 50px;
+            margin-bottom: 200px;
+        }
+        .status-image img{
+            height: 80px;
+            width: 80px;
+            opacity: 30%;
+        }
+        .click-note{
+            width: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            opacity: 60%;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .pager{
+            display: block;
+        }
+        nav{
+            display: none;
+        }
+
+        @media (min-width: 50px) and (max-width: 700px){
+            nav{
+                display: block;
+            }
+            .container{
+                height: 85.4vh;
+            }
+            .left-side{
+                width: 100%;
+                position: absolute;
+            }
+
+            .status-page{
+                height: 88%;
+            }
+
+            .pager{
+               display: none;
+            }
+
+        .navbar{
+            height: 100px;
+        }
+        }
+
+    </style>
+</head>
+<body>    
+    <nav class="navbar">
+ 
+        <div class="hammer">
+            <div class="neater">
+                <h2>WhatsApp</h2>
+
+                <div class="nail">
+                    <img src="./media/icons/png-photo-camera-white-icon-116404397106usv3uqy2h.png" alt="">
+                     <img class="aptech" src="./media/icons/searchIcon.png" alt="">
+                     <img   onclick="larger()" class="aptech joint" src="./media/icons/MenuDots.png" alt="">
+                </div>
+            </div>
+            <div class="cleaner">
+                <div class="combust">
+                    <h4 onclick="member()">Chats</h4>
+                    <h4 onclick="brother()">Updates</h4>
+                    <h4 onclick="catalogue()">Calls</h4>
+                </div>
+               
+            </div>
+        </div>
+    </nav>
+    <div class="container page-status">
+        <div class="low-rider">
+        <div class="left-side status-page">
+            <div class="contacts-list contacts-list-status">
+                <div class="contact-holder  contact-holder-status">
+                        <div class="status-halo-holder">
+                            <div class="status-halo">
+                                <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="my-status">
+                            <h3 class="name">My status</h3>
+                            <p>No update</p>
+                        </div>
+                </div>
+            <hr>
+            <div class="recent">RECENT</div>
+            <div class="contact-list-two">
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+            <div class="contact-holder  contact-holder-status">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-status">
+                    <h3 class="name">My status</h3>
+                    <p>No update</p>
+                </div>
+            </div>
+        </div>
+            </div>
+            <p class="last-text">Your Status update are <strong> end-to-end encrypted</strong></p>
+        </div>
+    </div>
+    <div class="chat-box pager">
+        <p><a href="index.html">X</a></p>
+        <div class="status-image"><img src="./media/icons/statusIcon.png" alt=""></div>
+        <div class="click-note">click on contact to view their status update</div>
+    </div>
+    </div>
+</body>
+</html>
