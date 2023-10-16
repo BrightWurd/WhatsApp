@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <link rel="icon" href="./media/icons/favicon (2).ico">
+
+    <link rel="stylesheet" href="./css/stlyle.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/script.js" defer></script>
+    <style>
+
+        .new-group{
+            width: 100%;
+            height: 70px;
+            margin-top: 10px;
+        }
+
+        .new-group .holder{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 10px;
+            padding: 10px auto 10px auto;
+            font-size: 1.1rem;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .slide-right-page .maker{
+            height: 120px;
+            display: flex;
+            align-items:end;
+            justify-content: center;
+            color: rgb(255, 255, 255,0.9);
+            gap: 10px;
+            width: 100%;
+        }
+
+        .slide-right-page .maker .healer{
+            display: flex;
+            width: 90%;
+            gap: 20px;
+            align-items: center;
+            height: 60%;
+        }
+
+        .slide-right-page .healer h1{
+            margin: 0px;
+            width: 90%;
+        }
+
+        .slide-right-page .healer img{
+            width: 6%;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .new-group .holder img{
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+            border-radius: 30px;
+        }
+
+        .new-group .holder .write-up{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        .new-group .holder div{
+            width: 20%;
+        }
+
+        #speaker-page{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(0, 0, 0,0.5); 
+            z-index: 1;
+            transform: scale(0.1);
+            transition: transform 0.3s ease;
+            visibility: hidden;
+        }
+
+        #open-speaker-page{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(0, 0, 0,0.5); 
+            z-index: 1;
+           transform: scale(1);
+           transition: transform 0.3s ease;
+           visibility: visible;
+         }
+         
+        .the-matter{
+            margin: auto;
+            margin-top: 1.5%;
+            height: 90%;
+            width: 35%;
+            background-color: #475a64;
+            border-radius: 5px;
+        }
+
+        .the-image{
+            width: 100%;
+            position: relative;
+            top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .the-image img{
+            height: 120px;
+            width: 210px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+
+        .the-matter h3{
+            color: rgb(231, 231, 231);
+            width: 76%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .the-matter p{
+            width: 95%;
+            color: rgb(231, 231, 231);
+            margin: auto;
+            font-size: 1rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: normal;
+        }
+         .the-matter ul{
+            font-size: 1rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: normal;
+            margin-top: 40px;
+            margin-bottom: 30px;
+         }
+
+         .the-matter ul li{
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: white;
+            list-style-type: none;
+         }
+
+         .the-matter a{
+            text-decoration: none;
+            color: rgb(4, 4, 151);
+         }
+
+         .the-matter .k{
+            display: flex;
+            width: 90%;
+            margin: 70px auto 0 auto;
+            justify-content: right;
+            height: 60px;
+            gap: 15px;
+         }
+
+         .the-matter div .cancel{
+            height: 40px;
+            width: 80px;
+            border: 1px solid rgb(128, 128, 128,0.6);
+            color:  #25D366;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .the-matter div .continueInFacebook{
+            height: 40px;
+            width: 180px;
+            border-radius: 20px;
+            background: #25D366;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+    </style>
+</head>
+<body>
+    <div id="speaker-page" onclick="removeIt()">
+        <div class="the-matter">
+            <div class="the-image">
+            <img src="./media/icons/Logo-WhatsApp.png" alt="">
+            </div>
+            <h3>Bring in new Customers With facebook & instagram ads</h3>
+            <p>Easily Create ads that shows on instagram & facebook that lead people to Whatsapp chat with you.</p>
+            <ul>
+                <li>Reach people locally</li>
+                <li>Control your ad Budget</li>
+                <li>Pause and stop ads anytime</li>
+            </ul>
+            <p>Your business name and photo would be shared with meta in order to create you ad . <a href="">Learn more</a></p>
+            <div class="k">
+                <div class="cancel">cancel</div>
+                <div class="continueInFacebook">continue in facebook</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div class="left-side">
+        <div id="exit-main" class="exit-page">
+            <div class="maker">
+                <div class="healer">
+                    <img class="pop" src="./media/icons/back button.png" alt="">
+                    <h1>New Chat</h1>
+                </div>
+            </div>
+            <div class="search-bar">
+                <img src="./media/icons/searchIcon.png" alt="">
+                <form action="">
+                    <label for="">
+                        <input type="text" placeholder="search.." id="search-me">
+                    </label>
+                </form>
+            </div>
+            <div class="contacts-p">
+                <div class="new-group">
+                    <div class="holder">
+                        <img src="./media/icons/friend.png" alt="">
+                        <div class="write-up">
+                          <p>New Group</p>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/icons/group-together-teamwork.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                           <div></div>
+                            <div class="write-up">
+                              <p>CONTACTS ON WHATSAPP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/workout.jpeg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/unnamed.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/reds.jpeg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/icons/group-together-teamwork.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/orange car.jpg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/blue lights.jpeg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/black and blue design.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/background.jpg" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/icons/group-together-teamwork.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/icons/group-together-teamwork.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-group">
+                        <div class="holder">
+                            <img src="./media/icons/group-together-teamwork.png" alt="">
+                            <div class="write-up">
+                              <p>New Community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <nav class="navbar">
+ 
+        <div class="hammer">
+            <div class="neater">
+                <h2>WhatsApp</h2>
+
+                <div class="mail" id="mail">
+                    <h5>New group</h5>
+                    <h5>New broadcast</h5>
+                    <h5>Linked devices</h5>
+                    <h5>Starred messages</h5>
+                    <h5>Settings</h5>
+                </div>
+
+                <div class="nail">
+                    <img src="./media/icons/png-photo-camera-white-icon-116404397106usv3uqy2h.png" alt="">
+                     <img class="aptech" src="./media/icons/searchIcon.png" alt="">
+                     <img   onclick="larger()" class="aptech joint" src="./media/icons/MenuDots.png" alt="">
+                </div>
+            </div>
+            <div class="cleaner">
+                <div class="combust">
+                    <h4 onclick="member()">Chats</h4>
+                    <h4 onclick="brother()">Updates</h4>
+                    <h4 onclick="catalogue()">Calls</h4>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="profile-pics-and-nav-links">
+            <img class="user-picture" src="./media/workout.jpeg" alt="">
+            <div class="icon">
+                <img id="speaker"   onclick="openPop()" src="./media/icons/NotificationSpeaker.png" alt="">
+                <a href="status.html"><img class="status" src="./media/icons/statusIcon.png" alt=""></a>
+
+                <img id="tweet" class="message" src="./media/icons/chats.png" alt="">
+                <img id="no" class="three-vertical-dots-icon-2" src="./media/icons/MenuDots.png" alt="">
+            </div>
+            <div class="drop">
+                <ul>
+                    <li>New Group</li>
+                    <li>New Community</li>
+                    <li>Starred message</li>
+                    <li>Select chats</li>
+                    <li>Settings</li>
+                    <li>Log Out</li>
+                    <hr>
+                    <li>Get Whatsapp for Windows</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <div class="tops">
+            <div class="search-bar">
+                <img src="./media/icons/searchIcon.png" alt="">
+                <form action="">
+                    <label for="">
+                        <input type="text" placeholder="search.." class="search-me">
+                    </label>
+                </form>
+            </div>
+            <div class="three-lines">
+                <div class="first child"></div>
+                <div class="second child"></div>
+                <div class="third child"></div>
+            </div>
+        </div>
+        <div class="contacts-list">
+            <div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div>
+            <div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/reds.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div>
+            <div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/blue lights.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div>
+            <div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/black and blue design.png" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/blue lights.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date">
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div><div class="contact-holder">
+                <div class="status-halo-holder">
+                    <div class="status-halo">
+                        <img class="smile" src="./media/ferrari-4k-latest-9y.jpg" alt="">
+                    </div>
+                </div>
+                <div class="name-text-date">
+                    <div class="name-and-date"/>
+                        <h3 class="n">Reality</h3>
+                        <div class="date">09/03/2023</div>
+                    </div>
+                    <p class="t">you can only find truth in God's word</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--The Chat side-->
+    <div class="sat-box">
+        <img src="./media/icons/Logo-WhatsApp.png" alt="">
+        <h2>Click any contact to chat</h2>
+    </div>
+    <div class="chat-box">
+        <div class="second-navbar">
+            <div class="second-nav-link">
+                <div class="chat-zone-identifier">
+                    <img class="user-picture friends" src="./media/reds.jpeg" alt="">
+                    <div class="friend-name-status-date">
+                        <h3>Recreation</h3>
+                        <p>last seen at 05/05/2020</p>
+                    </div>
+                </div>
+                <div class="icon extras">
+                    <img src="./media/icons/searchIcon.png" alt="">
+                    <img class="three-vertical-dots-icon-2" src="./media/icons/MenuDots.png" alt="">
+                </div>
+                <div class="backspace">
+                    <a href=""><img src="./media/icons/back button.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="chat-zone" style="background-image: url(unnamed.png);">
+            <div class="message-sent">
+                    <div class="friend-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis officiis, quidem earum dolorum esse eius dolore similique error, molestias nisi ?</div>
+                    <div id="mysent-box">
+                        iciendis asperiores tempora rem, omnis enim facilis veritatis accusamus est beatae eaque, exercitationem expedita.    
+                    </div>
+            </div>
+           
+        </div>
+        <div class="text-me">
+            <div class="press">
+                <div>
+                    <img class="bells" src="./media/icons/open-mouth-smiling-emoji-rubber-stamp_grande.png" alt="">
+                   <div class="plus-sign">+</div>
+                </div>
+                <form class="action-film" action="" id="actionFilm">
+                    <label for="">
+                        <input type="text" placeholder="search.." class="type-me">
+                    </label>
+                    <button><img class="sendAndRecord" src="./media/icons/voice note.png" alt=""></button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>
